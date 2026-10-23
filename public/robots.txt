@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pipandflicker.adrianburcin.com/sitemap.xml

@@ -161,12 +161,12 @@ button { font: inherit; color: inherit; }
 .rail { position: absolute; z-index: 2; left: 50%; top: max(28px, 5svh); translate: -50% 0; width: min(560px, 100% - 64px); }
 .rail ol { position: relative; margin: 0; padding: 0; list-style: none; display: flex; justify-content: space-between; }
 .rail ol::before { content: ""; position: absolute; left: 6px; right: 6px; top: 5px; height: 2px; border-radius: 2px; background: rgba(255, 255, 255, .28); }
-.rail li { position: relative; display: grid; justify-items: center; gap: 8px; width: 12px; }
-.rail li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, .45); box-shadow: 0 0 0 3px rgba(12, 21, 18, .35); }
-.rail li span { display: none; font-size: 13px; white-space: nowrap; color: rgba(255, 255, 255, .8); text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
+.rail li { position: relative; display: block; width: 12px; min-width: 0; flex: none; }   /* every dot the same width, so the steps are equal and the sun lands on them */
+.rail li::before { content: ""; display: block; width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, .45); box-shadow: 0 0 0 3px rgba(12, 21, 18, .35); }
+.rail li span { display: none; position: absolute; top: 20px; left: 50%; translate: -50% 0; font-size: 13px; white-space: nowrap; color: rgba(255, 255, 255, .8); text-shadow: 0 1px 8px rgba(0, 0, 0, .6); }
 .rail li[aria-current] span { color: #fff; font-weight: 600; }
 @media (min-width: 700px) { .rail li span { display: block; } }
-.rail .sun { position: absolute; top: -5px; left: calc(var(--p) * 25% - var(--p) * 5.5px); width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle, #fffbe6 0 30%, var(--gold) 55%, rgba(242, 195, 91, 0) 72%); box-shadow: 0 0 22px 6px rgba(242, 195, 91, .45); transition: left 1.1s cubic-bezier(.3, .7, .2, 1), background .8s; }
+.rail .sun { position: absolute; top: -5px; left: calc(var(--p) * 25% - var(--p) * 3px - 5px);   /* centre on dot p: 6px + p·(width − 12px)/4, minus half the sun (11px) */ width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle, #fffbe6 0 30%, var(--gold) 55%, rgba(242, 195, 91, 0) 72%); box-shadow: 0 0 22px 6px rgba(242, 195, 91, .45); transition: left 1.1s cubic-bezier(.3, .7, .2, 1), background .8s; }
 .day-stage[data-phase="3"] .sun, .day-stage[data-phase="4"] .sun { background: radial-gradient(circle, #f6fffb 0 30%, var(--mint) 55%, rgba(159, 245, 216, 0) 72%); box-shadow: 0 0 22px 6px rgba(159, 245, 216, .45); }
 .day-steps { position: relative; z-index: 3; margin-top: -100svh; padding-bottom: 50svh; }
 .day-step { min-height: 100svh; display: flex; align-items: flex-end; padding: 0 var(--gutter) 6svh; }

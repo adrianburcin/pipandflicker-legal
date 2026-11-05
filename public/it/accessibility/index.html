@@ -45,17 +45,24 @@
 <link rel="preload" href="/media/fonts/AmaticSC-Bold.woff" as="font" type="font/woff" crossorigin>
 <meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1613" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/css/site.css?v=7a7a663d2f">
+<script>
+(function(){var d=document.documentElement,s={},m=null;try{s=JSON.parse(localStorage.getItem("pf-a11y")||"{}")||{};m=localStorage.getItem("pf-still");}catch(e){}
+if(s.size>100)d.setAttribute("data-ts",String(s.size));if(s.contrast)d.classList.add("a-contrast");if(s.links)d.classList.add("a-links");if(s.read)d.classList.add("a-read");if(m==="1")d.classList.add("still");
+function k(e){if(e.viewTransition&&d.classList.contains("still"))e.viewTransition.skipTransition();}addEventListener("pageswap",k);addEventListener("pagereveal",k);})();
+</script>
+<link rel="stylesheet" href="/css/site.css?v=b46ef07d22">
 </head>
 
 <body class="legal">
 <a class="skip" href="#main">Vai al contenuto</a>
+<button class="a11y-btn" type="button" hidden aria-haspopup="dialog" aria-controls="a11y-dlg" title="Impostazioni di accessibilità"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span class="vh">Impostazioni di accessibilità</span></button>
+<dialog class="a11y-dlg" id="a11y-dlg" aria-labelledby="a11y-t"><div class="a11y-in"><div class="a11y-top"><h2 id="a11y-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span>Accessibilità</span></h2><button class="a11y-x" type="button" aria-label="Chiudi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><fieldset class="a11y-size"><legend>Dimensione testo</legend><div class="seg"><label><input type="radio" name="a11y-size" value="100" checked><span>100%</span></label><label><input type="radio" name="a11y-size" value="125"><span>125%</span></label><label><input type="radio" name="a11y-size" value="150"><span>150%</span></label><label><input type="radio" name="a11y-size" value="200"><span>200%</span></label></div></fieldset><ul class="a11y-opts"><li><label class="sw"><input type="checkbox" role="switch" data-k="contrast"><span class="tx">Contrasto più forte</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="still"><span class="tx">Ferma tutti i movimenti</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="links"><span class="tx">Sottolinea tutti i link</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="read"><span class="tx">Testo più facile da leggere</span><span class="tg" aria-hidden="true"></span></label></li></ul><div class="a11y-end"><button class="a11y-reset" type="button">Ripristina</button><a href="/it/accessibility/">Di più sull’accessibilità</a></div></div></dialog>
 <header class="lhead"><div class="lhead-in">
   <a class="mark" href="/it/"><img src="/media/icon-104.webp" width="36" height="36" alt=""><span>Pip &amp; Flicker</span></a>
   <details class="langmenu"><summary aria-label="Lingua: Italiano"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span>Italiano</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="/accessibility/" lang="en" hreflang="en">English</a></li><li><a href="/ro/accessibility/" lang="ro" hreflang="ro">Română</a></li><li><a href="/de/accessibility/" lang="de" hreflang="de">Deutsch</a></li><li><a href="/fr/accessibility/" lang="fr" hreflang="fr">Français</a></li><li><a href="/es/accessibility/" lang="es" hreflang="es">Español</a></li><li><a href="/it/accessibility/" lang="it" hreflang="it" aria-current="true">Italiano</a></li><li><a href="/pt_BR/accessibility/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/accessibility/" lang="ja" hreflang="ja">日本語</a></li><li><a href="/ko/accessibility/" lang="ko" hreflang="ko">한국어</a></li><li><a href="/zh_CN/accessibility/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li></ul></details>
 </div></header>
 <nav class="tabs" aria-label="Pagine di aiuto"><a href="/it/support/">Assistenza</a><a href="/it/privacy/">Privacy</a><a href="/it/terms/">Condizioni</a></nav>
-<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>Accessibilità</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Ultimo aggiornamento: 23 ottobre 2026</span></p></div><section class="card short-card" aria-label="In breve"><p>Vogliamo che tutti possano godersi Pip &amp; Flicker: il gioco e questo sito. Il sito punta a rispettare le <strong>Linee guida per l'accessibilità dei contenuti Web (WCAG) 2.2, livello AA</strong>.</p></section>
+<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>Accessibilità</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Ultimo aggiornamento: 5 novembre 2026</span></p></div><section class="card short-card" aria-label="In breve"><p>Vogliamo che tutti possano godersi Pip &amp; Flicker: il gioco e questo sito. Il sito punta a rispettare le <strong>Linee guida per l'accessibilità dei contenuti Web (WCAG) 2.2, livello AA</strong>.</p></section>
 <section id="site"><h2>Cosa fa questo sito</h2>
 <ul>
 <li>Tutto funziona solo con la tastiera, e vedi sempre dove ti trovi.</li>
@@ -67,16 +74,28 @@
 <li>Non usa cookie, nessun tracciamento e niente dai server di altre aziende.</li>
 </ul>
 </section>
+<section id="button"><h2>Il pulsante di accessibilità</h2>
+<p>In basso a sinistra in ogni pagina c'è un pulsante rotondo con l'omino dell'accessibilità. Apre un piccolo pannello dove puoi scegliere:</p>
+<ul>
+<li><strong>Dimensione testo:</strong> 100 %, 125 %, 150 % o 200 %.</li>
+<li><strong>Contrasto più forte:</strong> testo più chiaro, bordi più netti e uno sfondo pieno dietro il testo sopra le immagini.</li>
+<li><strong>Ferma tutti i movimenti:</strong> i video e le lucciole restano fermi.</li>
+<li><strong>Sottolinea tutti i link.</strong></li>
+<li><strong>Testo più facile da leggere:</strong> il carattere chiaro del tuo dispositivo, con più spazio tra righe, lettere e parole.</li>
+</ul>
+<p>Le tue scelte restano su questo dispositivo e non vengono mandate da nessuna parte. <strong>Ripristina</strong> rimette tutto com'era. Il pannello funziona anche con la tastiera: Esc lo chiude.</p>
+</section>
 <section id="game"><h2>Nel gioco</h2>
 <p>Il gioco ha le sue impostazioni di accessibilità: VoiceOver, Guida audio, Alta visibilità, Dimensione testo, Riduci movimento e Vibrazione. <a href="/it/#access">Scopri cosa fa ognuna</a>.</p>
 </section>
 <section id="limits"><h2>Limiti noti</h2>
 <ul>
 <li>I brevi video del gioco non hanno audio. Il testo accanto a ognuno dice cosa mostra.</li>
+<li>Il pulsante di accessibilità ha bisogno di JavaScript. Senza, le pagine funzionano lo stesso, e lo zoom e le impostazioni del testo del tuo browser aiutano comunque.</li>
 </ul>
 </section>
 <section id="checked"><h2>Come abbiamo controllato</h2>
-<p>Il 23 ottobre 2026 abbiamo controllato ogni pagina solo con la tastiera, con l'albero di accessibilità del browser, con il contrasto dei colori misurato sulle immagini vere, con zoom al 200 % e a 320 pixel di larghezza, con movimento ridotto e con colori forzati.</p>
+<p>Il 5 novembre 2026 abbiamo controllato di nuovo ogni pagina: solo con la tastiera, con controlli automatici di titoli, etichette, link e contrasto dei colori, con il testo al 200 % e a 320 pixel di larghezza, con più spazio tra righe, lettere e parole, con movimento ridotto e con colori forzati. Abbiamo anche provato ogni impostazione del pulsante di accessibilità. Il 23 ottobre 2026 abbiamo misurato il contrasto dei colori sulle immagini vere.</p>
 </section>
 <section class="card contact-card" id="contact"><h2>Segnalaci un problema</h2><p>Se qualcosa su questo sito o nel gioco è difficile da usare, scrivici a <a href="mailto:support@zmeustudio.com">support@zmeustudio.com</a>. Dicci cosa hai provato e che dispositivo usi. Leggiamo ogni messaggio.</p><a class="mailbtn" href="mailto:support@zmeustudio.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 6 8-6"/></svg>Scrivici</a></section>
 <p><a class="totop" href="#main">Torna su ↑</a></p></main>
@@ -89,6 +108,6 @@
 (function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);if(e&&e.tagName==="DETAILS")e.open=true;}
 addEventListener("hashchange",o);o();addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true;});});})();
 </script>
-<script src="/js/site.js?v=0ebf277820" defer></script>
+<script src="/js/site.js?v=11e1c6d9f6" defer></script>
 </body>
 </html>

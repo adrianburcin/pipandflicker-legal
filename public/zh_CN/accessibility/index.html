@@ -45,17 +45,24 @@
 <link rel="preload" href="/media/fonts/AmaticSC-Bold.woff" as="font" type="font/woff" crossorigin>
 <meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1613" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/css/site.css?v=7a7a663d2f">
+<script>
+(function(){var d=document.documentElement,s={},m=null;try{s=JSON.parse(localStorage.getItem("pf-a11y")||"{}")||{};m=localStorage.getItem("pf-still");}catch(e){}
+if(s.size>100)d.setAttribute("data-ts",String(s.size));if(s.contrast)d.classList.add("a-contrast");if(s.links)d.classList.add("a-links");if(s.read)d.classList.add("a-read");if(m==="1")d.classList.add("still");
+function k(e){if(e.viewTransition&&d.classList.contains("still"))e.viewTransition.skipTransition();}addEventListener("pageswap",k);addEventListener("pagereveal",k);})();
+</script>
+<link rel="stylesheet" href="/css/site.css?v=b46ef07d22">
 </head>
 
 <body class="legal">
 <a class="skip" href="#main">跳到正文</a>
+<button class="a11y-btn" type="button" hidden aria-haspopup="dialog" aria-controls="a11y-dlg" title="无障碍设置"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span class="vh">无障碍设置</span></button>
+<dialog class="a11y-dlg" id="a11y-dlg" aria-labelledby="a11y-t"><div class="a11y-in"><div class="a11y-top"><h2 id="a11y-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span>无障碍</span></h2><button class="a11y-x" type="button" aria-label="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><fieldset class="a11y-size"><legend>文字大小</legend><div class="seg"><label><input type="radio" name="a11y-size" value="100" checked><span>100%</span></label><label><input type="radio" name="a11y-size" value="125"><span>125%</span></label><label><input type="radio" name="a11y-size" value="150"><span>150%</span></label><label><input type="radio" name="a11y-size" value="200"><span>200%</span></label></div></fieldset><ul class="a11y-opts"><li><label class="sw"><input type="checkbox" role="switch" data-k="contrast"><span class="tx">更强的对比度</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="still"><span class="tx">停止所有动画</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="links"><span class="tx">给所有链接加下划线</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="read"><span class="tx">更易读的文字</span><span class="tg" aria-hidden="true"></span></label></li></ul><div class="a11y-end"><button class="a11y-reset" type="button">重置</button><a href="/zh_CN/accessibility/">了解更多无障碍信息</a></div></div></dialog>
 <header class="lhead"><div class="lhead-in">
   <a class="mark" href="/zh_CN/"><img src="/media/icon-104.webp" width="36" height="36" alt=""><span>Pip &amp; Flicker</span></a>
   <details class="langmenu"><summary aria-label="语言: 简体中文"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span>简体中文</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="/accessibility/" lang="en" hreflang="en">English</a></li><li><a href="/ro/accessibility/" lang="ro" hreflang="ro">Română</a></li><li><a href="/de/accessibility/" lang="de" hreflang="de">Deutsch</a></li><li><a href="/fr/accessibility/" lang="fr" hreflang="fr">Français</a></li><li><a href="/es/accessibility/" lang="es" hreflang="es">Español</a></li><li><a href="/it/accessibility/" lang="it" hreflang="it">Italiano</a></li><li><a href="/pt_BR/accessibility/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/accessibility/" lang="ja" hreflang="ja">日本語</a></li><li><a href="/ko/accessibility/" lang="ko" hreflang="ko">한국어</a></li><li><a href="/zh_CN/accessibility/" lang="zh-Hans" hreflang="zh-Hans" aria-current="true">简体中文</a></li></ul></details>
 </div></header>
 <nav class="tabs" aria-label="帮助页面"><a href="/zh_CN/support/">支持</a><a href="/zh_CN/privacy/">隐私</a><a href="/zh_CN/terms/">使用条款</a></nav>
-<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>无障碍</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>最后更新：2026年10月23日</span></p></div><section class="card short-card" aria-label="一眼看懂"><p>我们希望每个人都能享受 Pip &amp; Flicker：游戏，以及这个网站。本网站的目标是符合 <strong>《Web 内容无障碍指南》（WCAG）2.2 AA 级</strong>。</p></section>
+<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>无障碍</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>最后更新：2026年11月5日</span></p></div><section class="card short-card" aria-label="一眼看懂"><p>我们希望每个人都能享受 Pip &amp; Flicker：游戏，以及这个网站。本网站的目标是符合 <strong>《Web 内容无障碍指南》（WCAG）2.2 AA 级</strong>。</p></section>
 <section id="site"><h2>本网站做到了什么</h2>
 <ul>
 <li>只用键盘就能完成所有操作，而且你总能看清自己在哪里。</li>
@@ -67,16 +74,28 @@
 <li>不使用 Cookie，不做任何追踪，也不加载其他公司服务器上的内容。</li>
 </ul>
 </section>
+<section id="button"><h2>无障碍按钮</h2>
+<p>每个页面的左下角都有一个圆形按钮，上面是无障碍小人图标。点一下会打开一个小面板，你可以选择：</p>
+<ul>
+<li><strong>文字大小：</strong> 100 %、125 %、150 % 或 200 %。</li>
+<li><strong>更强的对比度：</strong> 文字更亮、边框更清楚，图片上的文字后面会铺上实色背景。</li>
+<li><strong>停止所有动画：</strong> 视频和萤火虫都会停下来。</li>
+<li><strong>给所有链接加下划线。</strong></li>
+<li><strong>更易读的文字：</strong> 使用设备自带的清晰字体，并加大行、字母和单词之间的距离。</li>
+</ul>
+<p>你的选择只保存在这台设备上，不会发送到任何地方。点“<strong>重置</strong>”就能恢复原样。面板也可以用键盘操作：按 Esc 键关闭。</p>
+</section>
 <section id="game"><h2>在游戏里</h2>
 <p>游戏有自己的无障碍设置：VoiceOver、声音引导、醒目模式、文字大小、减弱动态效果和震动。<a href="/zh_CN/#access">看看它们各自的作用</a></p>
 </section>
 <section id="limits"><h2>已知的局限</h2>
 <ul>
 <li>简短的游戏视频没有声音。每个视频旁边的文字会说明它展示的内容。</li>
+<li>无障碍按钮需要 JavaScript。没有 JavaScript 时页面照样能用，浏览器自带的缩放和文字设置也照样有用。</li>
 </ul>
 </section>
 <section id="checked"><h2>我们如何检查</h2>
-<p>2026年10月23日，我们检查了每一个页面：只用键盘操作、查看浏览器的无障碍树、在真实图片上测量颜色对比度、放大到 200 % 和 320 像素宽度、减少动态效果，以及强制颜色模式。</p>
+<p>2026年11月5日，我们又检查了每一个页面：只用键盘操作，自动检查标题、标签、链接和颜色对比度，文字放大到 200 % 和 320 像素宽度，加大行、字母和单词之间的距离，减少动态效果，以及强制颜色模式。我们还试过了无障碍按钮的每一项设置。2026年10月23日，我们在真实图片上测量了颜色对比度。</p>
 </section>
 <section class="card contact-card" id="contact"><h2>告诉我们遇到的问题</h2><p>如果这个网站或游戏里有什么地方不好用，请写信到 <a href="mailto:support@zmeustudio.com">support@zmeustudio.com</a>。告诉我们你尝试了什么，以及你用的是什么设备。每一封信我们都会读。</p><a class="mailbtn" href="mailto:support@zmeustudio.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 6 8-6"/></svg>写信给我们</a></section>
 <p><a class="totop" href="#main">回到顶部 ↑</a></p></main>
@@ -89,6 +108,6 @@
 (function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);if(e&&e.tagName==="DETAILS")e.open=true;}
 addEventListener("hashchange",o);o();addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true;});});})();
 </script>
-<script src="/js/site.js?v=0ebf277820" defer></script>
+<script src="/js/site.js?v=11e1c6d9f6" defer></script>
 </body>
 </html>

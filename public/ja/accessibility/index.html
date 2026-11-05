@@ -45,17 +45,24 @@
 <link rel="preload" href="/media/fonts/AmaticSC-Bold.woff" as="font" type="font/woff" crossorigin>
 <meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1613" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/css/site.css?v=7a7a663d2f">
+<script>
+(function(){var d=document.documentElement,s={},m=null;try{s=JSON.parse(localStorage.getItem("pf-a11y")||"{}")||{};m=localStorage.getItem("pf-still");}catch(e){}
+if(s.size>100)d.setAttribute("data-ts",String(s.size));if(s.contrast)d.classList.add("a-contrast");if(s.links)d.classList.add("a-links");if(s.read)d.classList.add("a-read");if(m==="1")d.classList.add("still");
+function k(e){if(e.viewTransition&&d.classList.contains("still"))e.viewTransition.skipTransition();}addEventListener("pageswap",k);addEventListener("pagereveal",k);})();
+</script>
+<link rel="stylesheet" href="/css/site.css?v=b46ef07d22">
 </head>
 
 <body class="legal">
 <a class="skip" href="#main">本文へ移動</a>
+<button class="a11y-btn" type="button" hidden aria-haspopup="dialog" aria-controls="a11y-dlg" title="アクセシビリティ設定"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span class="vh">アクセシビリティ設定</span></button>
+<dialog class="a11y-dlg" id="a11y-dlg" aria-labelledby="a11y-t"><div class="a11y-in"><div class="a11y-top"><h2 id="a11y-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span>アクセシビリティ</span></h2><button class="a11y-x" type="button" aria-label="閉じる"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><fieldset class="a11y-size"><legend>文字サイズ</legend><div class="seg"><label><input type="radio" name="a11y-size" value="100" checked><span>100%</span></label><label><input type="radio" name="a11y-size" value="125"><span>125%</span></label><label><input type="radio" name="a11y-size" value="150"><span>150%</span></label><label><input type="radio" name="a11y-size" value="200"><span>200%</span></label></div></fieldset><ul class="a11y-opts"><li><label class="sw"><input type="checkbox" role="switch" data-k="contrast"><span class="tx">コントラストを強く</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="still"><span class="tx">動きをすべて止める</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="links"><span class="tx">すべてのリンクに下線</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="read"><span class="tx">読みやすい文字</span><span class="tg" aria-hidden="true"></span></label></li></ul><div class="a11y-end"><button class="a11y-reset" type="button">リセット</button><a href="/ja/accessibility/">アクセシビリティについて</a></div></div></dialog>
 <header class="lhead"><div class="lhead-in">
   <a class="mark" href="/ja/"><img src="/media/icon-104.webp" width="36" height="36" alt=""><span>Pip &amp; Flicker</span></a>
   <details class="langmenu"><summary aria-label="言語: 日本語"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span>日本語</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="/accessibility/" lang="en" hreflang="en">English</a></li><li><a href="/ro/accessibility/" lang="ro" hreflang="ro">Română</a></li><li><a href="/de/accessibility/" lang="de" hreflang="de">Deutsch</a></li><li><a href="/fr/accessibility/" lang="fr" hreflang="fr">Français</a></li><li><a href="/es/accessibility/" lang="es" hreflang="es">Español</a></li><li><a href="/it/accessibility/" lang="it" hreflang="it">Italiano</a></li><li><a href="/pt_BR/accessibility/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/accessibility/" lang="ja" hreflang="ja" aria-current="true">日本語</a></li><li><a href="/ko/accessibility/" lang="ko" hreflang="ko">한국어</a></li><li><a href="/zh_CN/accessibility/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li></ul></details>
 </div></header>
 <nav class="tabs" aria-label="ヘルプページ"><a href="/ja/support/">サポート</a><a href="/ja/privacy/">プライバシー</a><a href="/ja/terms/">利用規約</a></nav>
-<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>アクセシビリティ</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>最終更新日：2026年10月23日</span></p></div><section class="card short-card" aria-label="ひと目でわかる"><p>ゲームもこのウェブサイトも、だれもが楽しめるものにしたいと考えています。このサイトは <strong>Web コンテンツ アクセシビリティ ガイドライン（WCAG）2.2 のレベル AA</strong> への準拠をめざしています。</p></section>
+<main id="main" class="lmain" tabindex="-1"><div class="ltitle"><p class="eb">Pip &amp; Flicker</p><h1>アクセシビリティ</h1><p class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>最終更新日：2026年11月5日</span></p></div><section class="card short-card" aria-label="ひと目でわかる"><p>ゲームもこのウェブサイトも、だれもが楽しめるものにしたいと考えています。このサイトは <strong>Web コンテンツ アクセシビリティ ガイドライン（WCAG）2.2 のレベル AA</strong> への準拠をめざしています。</p></section>
 <section id="site"><h2>このサイトでできること</h2>
 <ul>
 <li>キーボードだけですべて操作でき、いまどこにいるかがいつも見えます。</li>
@@ -67,16 +74,28 @@
 <li>Cookie もトラッキングも使わず、ほかの会社のサーバーからは何も読み込みません。</li>
 </ul>
 </section>
+<section id="button"><h2>アクセシビリティボタン</h2>
+<p>どのページも左下に、アクセシビリティの人のマークがついた丸いボタンがあります。押すと小さなパネルが開き、次のものを選べます：</p>
+<ul>
+<li><strong>文字サイズ：</strong> 100 %、125 %、150 %、200 %。</li>
+<li><strong>コントラストを強く：</strong> 文字をより明るく、ふちをはっきりさせ、画像の上の文字のうしろを塗りつぶします。</li>
+<li><strong>動きをすべて止める：</strong> 動画もホタルも止まります。</li>
+<li><strong>すべてのリンクに下線。</strong></li>
+<li><strong>読みやすい文字：</strong> 端末のすっきりした文字にして、行・文字・単語のあいだを広げます。</li>
+</ul>
+<p>選んだ設定はこの端末だけに残り、どこにも送られません。<strong>リセット</strong>でもとに戻ります。パネルはキーボードでも使えます。Esc キーで閉じます。</p>
+</section>
 <section id="game"><h2>ゲームでは</h2>
 <p>ゲームには独自のアクセシビリティ設定があります：VoiceOver、オーディオガイド、くっきり表示、文字サイズ、視差効果を減らす、振動。<a href="/ja/#access">それぞれの説明を見る</a></p>
 </section>
 <section id="limits"><h2>わかっている制限</h2>
 <ul>
 <li>短いゲーム動画には音がありません。それぞれの動画の横の文章で、何が映っているかを説明しています。</li>
+<li>アクセシビリティボタンには JavaScript が必要です。JavaScript がなくてもページは使え、ブラウザの拡大や文字の設定も使えます。</li>
 </ul>
 </section>
 <section id="checked"><h2>確認のしかた</h2>
-<p>2026年10月23日に、すべてのページを確認しました：キーボードだけでの操作、ブラウザのアクセシビリティツリー、実際の画像の上で測った色のコントラスト、200 % の拡大と幅 320 ピクセル、動きを減らす設定、強制カラー。</p>
+<p>2026年11月5日に、すべてのページをもう一度確認しました：キーボードだけでの操作、見出し・ラベル・リンク・色のコントラストの自動チェック、200 % の文字サイズと幅 320 ピクセル、行・文字・単語のあいだを広げた表示、動きを減らす設定、強制カラー。アクセシビリティボタンの設定もすべて試しました。2026年10月23日には、実際の画像の上で色のコントラストを測りました。</p>
 </section>
 <section class="card contact-card" id="contact"><h2>困ったことを教えてください</h2><p>このサイトやゲームで使いにくいところがあれば、<a href="mailto:support@zmeustudio.com">support@zmeustudio.com</a> までお知らせください。試したことと、使っている端末を書いてください。いただいたメッセージはすべて読んでいます。</p><a class="mailbtn" href="mailto:support@zmeustudio.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7.5l8 6 8-6"/></svg>メールを送る</a></section>
 <p><a class="totop" href="#main">ページの先頭へ ↑</a></p></main>
@@ -89,6 +108,6 @@
 (function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);if(e&&e.tagName==="DETAILS")e.open=true;}
 addEventListener("hashchange",o);o();addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true;});});})();
 </script>
-<script src="/js/site.js?v=0ebf277820" defer></script>
+<script src="/js/site.js?v=11e1c6d9f6" defer></script>
 </body>
 </html>

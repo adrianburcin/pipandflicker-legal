@@ -45,11 +45,18 @@
 <link rel="preload" href="/media/fonts/AmaticSC-Bold.woff" as="font" type="font/woff" crossorigin>
 <meta name="theme-color" content="#fbf6ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1613" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/css/site.css?v=7a7a663d2f">
+<script>
+(function(){var d=document.documentElement,s={},m=null;try{s=JSON.parse(localStorage.getItem("pf-a11y")||"{}")||{};m=localStorage.getItem("pf-still");}catch(e){}
+if(s.size>100)d.setAttribute("data-ts",String(s.size));if(s.contrast)d.classList.add("a-contrast");if(s.links)d.classList.add("a-links");if(s.read)d.classList.add("a-read");if(m==="1")d.classList.add("still");
+function k(e){if(e.viewTransition&&d.classList.contains("still"))e.viewTransition.skipTransition();}addEventListener("pageswap",k);addEventListener("pagereveal",k);})();
+</script>
+<link rel="stylesheet" href="/css/site.css?v=b46ef07d22">
 </head>
 
 <body class="legal">
 <a class="skip" href="#main">Skip to content</a>
+<button class="a11y-btn" type="button" hidden aria-haspopup="dialog" aria-controls="a11y-dlg" title="Accessibility settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span class="vh">Accessibility settings</span></button>
+<dialog class="a11y-dlg" id="a11y-dlg" aria-labelledby="a11y-t"><div class="a11y-in"><div class="a11y-top"><h2 id="a11y-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="6.4" r="1.6" fill="currentColor" stroke="none"/><path d="M6.6 9.3l5.4 1.2 5.4-1.2M12 10.5v3.6M12 14.1l-2.6 4.6M12 14.1l2.6 4.6"/></svg><span>Accessibility</span></h2><button class="a11y-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><fieldset class="a11y-size"><legend>Text size</legend><div class="seg"><label><input type="radio" name="a11y-size" value="100" checked><span>100%</span></label><label><input type="radio" name="a11y-size" value="125"><span>125%</span></label><label><input type="radio" name="a11y-size" value="150"><span>150%</span></label><label><input type="radio" name="a11y-size" value="200"><span>200%</span></label></div></fieldset><ul class="a11y-opts"><li><label class="sw"><input type="checkbox" role="switch" data-k="contrast"><span class="tx">Stronger contrast</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="still"><span class="tx">Stop all motion</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="links"><span class="tx">Underline all links</span><span class="tg" aria-hidden="true"></span></label></li><li><label class="sw"><input type="checkbox" role="switch" data-k="read"><span class="tx">Easier-to-read text</span><span class="tg" aria-hidden="true"></span></label></li></ul><div class="a11y-end"><button class="a11y-reset" type="button">Reset</button><a href="/accessibility/">More about accessibility</a></div></div></dialog>
 <header class="lhead"><div class="lhead-in">
   <a class="mark" href="/"><img src="/media/icon-104.webp" width="36" height="36" alt=""><span>Pip &amp; Flicker</span></a>
   <details class="langmenu"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg><span>English</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></summary><ul><li><a href="/support/" lang="en" hreflang="en" aria-current="true">English</a></li><li><a href="/ro/support/" lang="ro" hreflang="ro">Română</a></li><li><a href="/de/support/" lang="de" hreflang="de">Deutsch</a></li><li><a href="/fr/support/" lang="fr" hreflang="fr">Français</a></li><li><a href="/es/support/" lang="es" hreflang="es">Español</a></li><li><a href="/it/support/" lang="it" hreflang="it">Italiano</a></li><li><a href="/pt_BR/support/" lang="pt-BR" hreflang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/support/" lang="ja" hreflang="ja">日本語</a></li><li><a href="/ko/support/" lang="ko" hreflang="ko">한국어</a></li><li><a href="/zh_CN/support/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></li></ul></details>
@@ -98,6 +105,6 @@
 (function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);if(e&&e.tagName==="DETAILS")e.open=true;}
 addEventListener("hashchange",o);o();addEventListener("beforeprint",function(){document.querySelectorAll("details").forEach(function(d){d.open=true;});});})();
 </script>
-<script src="/js/site.js?v=0ebf277820" defer></script>
+<script src="/js/site.js?v=11e1c6d9f6" defer></script>
 </body>
 </html>

@@ -8,14 +8,17 @@
       page's ambient motion (WCAG 2.2.2), remembered on this device.
    6. Language menu: Escape closes it and gives focus back, a click or focus elsewhere closes it.
    7. Scrolling strips are a tab stop only while they actually scroll.
-   (The language-menu part also runs on the Privacy / Support / Terms / Accessibility pages.) */
+   8. The accessibility button: a dialog with text size, stronger contrast, stop all motion, underline links and
+      easier-to-read text. Saved on this device ("pf-a11y"; "pf-still" is shared with the hero's pause button);
+      the tiny script in <head> puts them on <html> before the first paint.
+   (Parts 6 and 8 also run on the Privacy / Support / Terms / Accessibility pages.) */
 (function () {
   "use strict";
   var doc = document.documentElement;
   doc.classList.add("js");
   var mq = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : { matches: false };
   var saveData = !!(navigator.connection && navigator.connection.saveData);
-  var noAuto = function () { return mq.matches || saveData; };
+  var noAuto = function () { return mq.matches || saveData || doc.classList.contains("still"); };
   var hasIO = "IntersectionObserver" in window;
 
   /* 1 ── loops */
@@ -53,7 +56,7 @@
     new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         visible = e.isIntersecting;
-        if (visible && !userPaused && !noAuto() && !doc.classList.contains("still")) play();
+        if (visible && !userPaused && !noAuto()) play();
         else if (!visible && !v.paused) v.pause();
       });
     }, { threshold: 0.35 }).observe(clip);
@@ -87,7 +90,7 @@
   /* 3 ── reveal fallback */
   var cssScroll = window.CSS && CSS.supports && CSS.supports("animation-timeline: view()");
   var reveals = [].slice.call(document.querySelectorAll(".reveal"));
-  if (!cssScroll && hasIO && !mq.matches) {
+  if (!cssScroll && hasIO && !noAuto()) {
     var rio = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); rio.unobserve(e.target); } });
     }, { rootMargin: "0px 0px -8% 0px" });
@@ -120,16 +123,16 @@
     new IntersectionObserver(function (es) { hero.classList.toggle("off", !es[0].isIntersecting); }).observe(hero);
   }
   var still = document.querySelector(".still-btn");
+  var stillBox = document.querySelector('.a11y-dlg input[data-k="still"]');
+  var setStill = function (on, save) {
+    doc.classList.toggle("still", on);
+    if (still) still.setAttribute("aria-pressed", on ? "true" : "false");
+    if (stillBox) stillBox.checked = on;
+    if (on) clips.forEach(function (c) { var v = c.querySelector("video"); if (v && !v.paused) v.pause(); });
+    if (save) { try { localStorage.setItem("pf-still", on ? "1" : "0"); } catch (e) {} }
+  };
+  setStill(doc.classList.contains("still"), false);   // the <head> script already read the saved choice
   if (still) {
-    var setStill = function (on, save) {
-      doc.classList.toggle("still", on);
-      still.setAttribute("aria-pressed", on ? "true" : "false");
-      if (on) clips.forEach(function (c) { var v = c.querySelector("video"); if (v && !v.paused) v.pause(); });
-      if (save) { try { localStorage.setItem("pf-still", on ? "1" : "0"); } catch (e) {} }
-    };
-    var saved = null;
-    try { saved = localStorage.getItem("pf-still"); } catch (e) {}
-    setStill(saved === "1", false);
     still.hidden = false;
     still.addEventListener("click", function () { setStill(!doc.classList.contains("still"), true); });
   }
@@ -148,4 +151,64 @@
   var strips = [].slice.call(document.querySelectorAll(".clips, .reel"));
   var tabs = function () { strips.forEach(function (el) { if (el.scrollWidth > el.clientWidth + 2) el.setAttribute("tabindex", "0"); else el.removeAttribute("tabindex"); }); };
   if (strips.length) { tabs(); window.addEventListener("resize", tabs); }
+
+  /* 8 ── accessibility button + settings dialog */
+  var abtn = document.querySelector(".a11y-btn"), dlg = document.getElementById("a11y-dlg");
+  if (abtn && dlg && typeof dlg.showModal === "function") {
+    var CLS = { contrast: "a-contrast", links: "a-links", read: "a-read" };
+    var st = {};
+    try { st = JSON.parse(localStorage.getItem("pf-a11y") || "{}") || {}; } catch (e) { st = {}; }
+    var store = function () { try { localStorage.setItem("pf-a11y", JSON.stringify(st)); } catch (e) {} };
+    var radios = [].slice.call(dlg.querySelectorAll('input[name="a11y-size"]'));
+    var boxes = [].slice.call(dlg.querySelectorAll("input[data-k]"));
+    var setSize = function (n) {
+      n = [100, 125, 150, 200].indexOf(+n) >= 0 ? +n : 100;
+      if (n > 100) doc.setAttribute("data-ts", String(n)); else doc.removeAttribute("data-ts");
+      radios.forEach(function (r) { r.checked = +r.value === n; });
+      st.size = n;
+    };
+    var setOpt = function (k, on) {
+      if (k === "still") { setStill(on, true); return; }
+      doc.classList.toggle(CLS[k], on);
+      st[k] = on;
+    };
+    var sync = function () {
+      setSize(st.size || 100);
+      boxes.forEach(function (b) { var k = b.getAttribute("data-k"); b.checked = k === "still" ? doc.classList.contains("still") : doc.classList.contains(CLS[k]); });
+    };
+    sync();
+    radios.forEach(function (r) { r.addEventListener("change", function () { if (r.checked) { setSize(r.value); store(); } }); });
+    boxes.forEach(function (b) { b.addEventListener("change", function () { setOpt(b.getAttribute("data-k"), b.checked); store(); }); });
+    dlg.querySelector(".a11y-reset").addEventListener("click", function () {
+      st = {}; setSize(100);
+      ["contrast", "links", "read"].forEach(function (k) { doc.classList.remove(CLS[k]); });
+      setStill(false, true);
+      try { localStorage.removeItem("pf-a11y"); } catch (e) {}
+      sync();
+    });
+    var focusables = function () {
+      return [].slice.call(dlg.querySelectorAll("button, a[href], input")).filter(function (el) {
+        return !el.disabled && el.offsetParent !== null && !(el.type === "radio" && !el.checked);
+      });
+    };
+    abtn.addEventListener("click", function () {
+      sync();
+      dlg.showModal();
+      abtn.setAttribute("aria-expanded", "true");
+      var first = dlg.querySelector('input[name="a11y-size"]:checked');
+      if (first) first.focus();
+    });
+    dlg.querySelector(".a11y-x").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("close", function () { abtn.setAttribute("aria-expanded", "false"); abtn.focus(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });   // a tap on the dimmed page closes it
+    dlg.addEventListener("keydown", function (e) {   // Tab and Shift+Tab go round inside the dialog
+      if (e.key !== "Tab") return;
+      var f = focusables(); if (!f.length) return;
+      var a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { z.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === z) { a.focus(); e.preventDefault(); }
+    });
+    abtn.setAttribute("aria-expanded", "false");
+    abtn.hidden = false;
+  }
 })();

@@ -6,7 +6,10 @@
     { "pattern": "pipandflicker.adrianburcin.com", "custom_domain": true },
     { "pattern": "pipandflicker.zmeustudio.com", "custom_domain": true }
   ],
+  "main": "worker.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/media/*"]
   }
 }

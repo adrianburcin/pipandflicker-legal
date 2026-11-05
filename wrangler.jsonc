@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pipandflicker",
   "compatibility_date": "2026-10-23",
+  "routes": [
+    { "pattern": "pipandflicker.adrianburcin.com", "custom_domain": true },
+    { "pattern": "pipandflicker.zmeustudio.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public"
   }
